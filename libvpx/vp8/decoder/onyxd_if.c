@@ -487,8 +487,6 @@ int vp8_remove_decoder_instances(struct frame_buffers *fb)
         if (!pbi)
             return VPX_CODEC_ERROR;
 #if CONFIG_MULTITHREAD
-        if (pbi->b_multithreaded_rd)
-            vp8mt_de_alloc_temp_buffers(pbi, pbi->common.mb_rows);
         vp8_decoder_remove_threads(pbi);
 #endif
 
